@@ -1,0 +1,67 @@
+<html>
+  <head>
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>add user</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+	<style type="text/css">
+
+	#add_user_box{ width:400px; height:400px; border-top: 1px dotted #888; border:1px solid black; position:absolute; left:53%; top:40%;  margin: -140px  0  0 -292px; padding:22px 40px 8px;}
+	.add_user_form{ width:400px; height:280px; border-top: 1px dotted #888; border-bottom:1px dotted #888; position:relative; left:0%; top:5%;}  
+	.form-horizontal {margin-top: 3px; padding: 15px 95px 0;}
+	label {text-align: right;
+    clear: both;
+    float:left;
+    margin-right:20px;}
+    .add_user_form .sub_form{position:absolute; top:290px; left:150px;}
+	.add_user_form .sub_form input{ width:120px; height:54px; border:1px; background:#333; color: #FFF;}
+	
+	
+	</style>
+	
+    </head>
+
+    <body>
+	<div id="add_user_box">
+	<h2>Register</h1>
+	<div class="add_user_form">
+	<form name="add" action="/add_user" method="POST" class="form-horizontal" >
+    <div class="form-group">
+	<label for="inputEmail" class="col-sm-2 control-label">아이디 </label>
+      <div class="col-sm-10">
+		<input type="text" name="userid_add" placeholder="ID" >
+      </div>
+    </div>
+    <div class="form-group">
+	<label for="inputUsername" class="col-sm-2 control-label">패스워드 </label>
+      <div class="col-sm-10">
+        <input type="password" name="userps_add" placeholder="password" >
+      </div>
+    </div>
+    <div class="form-group">
+	<label for="inputName" class="col-sm-2 control-label">닉네임 </label>
+      <div class="col-sm-10">
+		<input type="text" name="usernick_add" placeholder="nickname" >
+      </div>
+    </div>
+    <div class="form-group">
+	<label for="inputNumber" class="col-sm-2 control-label">이메일 </label>
+      <div class="col-sm-10">
+		<input type="text" name="email" placeholder="email" >
+      </div>
+    </div>
+    <div class="form-group">
+	<label for="inputAddress" class="col-sm-2 control-label">전화번호</label>
+      <div class="col-sm-10">
+		<input type="text" name="phone" placeholder="phone number">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="text-center">
+        <div class="sub_form"><input type="submit" value="Register">
+      </div>
+    </div>
+  </form>
+	</div>
+      </body>
+  </html>
+  

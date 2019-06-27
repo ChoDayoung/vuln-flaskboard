@@ -1,0 +1,38 @@
+<html>
+  <head>
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>mod user</title>
+	<style type="text/css">
+	body{ font-family:"굴림",sans-serif; font-size:15px; color:#333;}
+	#mod_user_box{ width:400px; height:350px; border:2px solid #000069; position:absolute; left:53%; top:43%;  margin: -140px  0  0 -292px; padding:22px 40px 8px;}
+	.mod_user_form{ width:420px; height:250px; border-top: 2px dotted #000069; border-bottom:2px dotted #000069; position:absolute; left:6%; top:25%;}  
+	.mod_user_form .id_mod_form{ width:270px; height:60px; position:absolute; top:20px; left:104px;}
+	.mod_user_form .ps_mod_form{ width:270px; height:60px; position:absolute; top:52px; left:47px;}
+	.mod_user_form .nik_mod_form{ width:270px; height:60px; position:absolute; top:84px; left:48px;}
+	.mod_user_form .email_mod_form{ width:270px; height:60px; position:absolute; top:116px; left:70px;}
+  .mod_user_form .phone_mod_form{width:270px; height:60px; position:absolute; top:148px; left: 73px;}
+  .mod_user_form .sub_form{position:absolute; top:190px; left:135px;}
+	.mod_user_form .sub_form input{ width:160px; height:40px; font-size:17px; border:0;border:1px solid #483D8B; background:#483D8B; color:#FFFFFF;}
+	input {border: 1px solid #bcbcbc; border-radius: 0px; -webkit-appearance: none; width:190px; height:25px;}
+	</style>
+    </head>
+
+    <body>
+	<div id="mod_user_box">
+	<h1>User Modification</h1>
+	<div class="mod_user_form">
+    {% for da in data %}
+      <form action="/mod_account/{{ da[0]}}/modification" method="POST" >
+        <div class="id_mod_form"><span style="font-weight:bold">id   {{da[0]}}</span></div>
+        <div class="ps_mod_form"><span style="font-weight:bold">password   <input type="password" name="userps_mod" placeholder="{{dataps}}"/></span></div>
+        <div class="nik_mod_form"><span style="font-weight:bold">nickname   <input type="text" name="usernick_mod" placeholder="{{da[2]}}" /></span></div>
+        <div class="email_mod_form"><span style="font-weight:bold">e-mail   <input type="text" name="email_mod" placeholder="{{da[3]}}"/></span></div>
+        <div class="phone_mod_form"><span style="font-weight:bold">phone   <input type="text" name="phone_mod" placeholder="{{da[4]}}"/></span></div>
+        <div class="sub_form"><input type="submit" value="User Modification"/></div>
+        </form>
+        {% endfor %}
+	</div>
+	</div>
+      </body>
+  </html>
+  

@@ -1,0 +1,36 @@
+<html>
+  <head>
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>add user</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+	<style type="text/css">
+	#add_user_box{ width:400px; height:350px; border-top: 1px dotted #888; border:1px solid black; position:absolute; left:53%; top:50%;  margin: -140px  0  0 -292px; padding:22px 40px 8px;}
+	.add_user_form{ width:400px; height:230px; border-top: 1px dotted #888; border-bottom:1px dotted #888; position:relative; left:0%; top:3%;}  
+	.add_user_form .id_add_form{ width:270px; height:60px; position:absolute; top:20px; left:47px;}
+	.add_user_form .ps_add_form{ width:270px; height:60px; position:absolute; top:52px; left:47px;}
+	.add_user_form .nik_add_form{ width:270px; height:60px; position:absolute; top:84px; left:48px;}
+	.add_user_form .email_add_form{ width:270px; height:60px; position:absolute; top:116px; left:70px;}
+  .add_user_form .phone_add_form{width:270px; height:60px; position:absolute; top:148px; left: 73px;}
+  .add_user_form .sub_form{position:absolute; top:240px; left:150px;}
+	.add_user_form .sub_form input{ width:120px; height:54px; border:1px; background:#333; color: #FFF;;}
+	</style>
+	
+    </head>
+
+    <body>
+	<div id="add_user_box">
+	<h2>Register</h1>
+	<div class="add_user_form">
+      <form name="add" action="/add_user" method="POST" >
+        <div class="id_add_form"><span style="font-weight:bold">아이디 <input type="text" name="userid_add" placeholder="ID" ></span ></div>
+        <div class="ps_add_form"><span style="font-weight:bold">패스워드 <input type="password" name="userps_add" placeholder="password" ></span ></div>
+        <div class="nik_add_form"><span style="font-weight:bold">닉네임 <input type="text" name="usernick_add" placeholder="nickname" ></span ></div>
+        <div class="email_add_form"><span style="font-weight:bold">이메일 <input type="text" name="email" placeholder="email" ></span ></div>
+        <div class="phone_add_form"><span style="font-weight:bold">전화번호 <input type="text" name="phone" placeholder="phone number"></span></div>
+        <div class="sub_form"><input type="submit" value="Register">
+        </form>
+	</div>
+	</div>
+      </body>
+  </html>
+  

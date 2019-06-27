@@ -1,0 +1,30 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>add write</title>
+<style type="text/css">
+body{ font-family:"굴림",sans-serif; font-size:13px; color:#FFFFFF;}
+	#add_write_box{ width:700px; height:600px; border: 4px double #000000; position:absolute; left:45%; top:25%; background:#4a566c; margin: -140px  0  0 -292px; padding:22px 40px 8px;}
+	.add_write_form{ width:700px; height:450px; border-top: 3px dotted #FFFFFF; border-bottom:3px dotted #FFFFFF; background:#f6fbff; position:absolute;left:5%; top:13%;}  
+	.add_write_form .board_title_form{ width:270px; height:60px; position:absolute; top:13px; left:60px;}
+	.add_write_form .board_write_form{ width:270px; height:60px; position:absolute; top:57px; left:60px;}
+	.add_write_form .upload_form_file{ width:250px; height:60px; position:absolute; top:370px; left:60px;}
+	.add_write_form .sub_form{position:absolute; top:470px; left:280px;}
+	.add_write_form .sub_form input{ width:160px; height:40px; font-size:17px; border:0;border:1px solid #f6fbff; background:#f6fbff; color:#000000;}
+	input {border: 1px solid #bcbcbc; border-radius: 0px; -webkit-appearance: none; width:190px; height:25px;}
+	</style>
+    </head>
+<body>
+<div id="add_write_box">
+	<h1>Write</h1>
+	<div class="add_write_form">
+  <form action='/add_write' method="POST" enctype="multipart/form-data">
+<div class="board_title_form"><input type="text" name="board_title" placeholder="제목" style="width:590px"></div>
+<div class="board_write_form"><input type="text" name="board_write" placeholder="내용" style="height:300px;width:590px"></div>
+<div class="upload_form_file"><input type="file" name="_file" style="width:590px"></div>
+<div class="sub_form"><input type="submit" value="Upload"></div>
+</form>
+</div>
+	</div>
+</body>
+</html>

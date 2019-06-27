@@ -1,0 +1,80 @@
+<!doctype html>
+<!--
+The MIT License
+
+Copyright 2018 TISTORY
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.-->
+
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+
+<title>linarena test board</title>
+
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+<body id="tt-body-page" class="color-gray post-type-text paging-view-more">
+<s_t3>
+<div id="acc-nav">
+	<a href="#content">본문 바로가기</a>
+</div>
+<div id="wrap">
+	<header id="header">
+		<h1><a href="/board_main"><img src="http://www.bccpost.com/news/photo/201811/1494_1162_195.jpg" width="400" height="130"></a></h1>
+		<!--<button type="button" class="mobile-menu">
+		<span>메뉴</span>
+		</button>-->	
+		<div class="search on">
+			
+					<input type="text" name="search" value="" placeholder="검색내용을 입력하세요." >
+					<button type="submit" onclick="location.href='/board_main/search?query='+document.getElementsByName('search')[0].value;"><img src="https://cdn2.iconfinder.com/data/icons/simple-microphone-icon/512/Search_Icon-256.png" width="40" height="35"></button>
+				
+		</div>
+	</header>
+	<hr>
+	<section class="container">
+		<article id="content">
+		<div class="post-header">
+					
+					<span><h1>전체 글</h1></span>
+					<span style="padding-left: 5px; font-weight: bold;">({{cnt}})</span><a href="/add_write" class="btn_tistory btn_log_info">글쓰기</a></div>
+		<div class="inner">
+{% for da in data %}
+						<div class="post-item">
+							<a href="/board_view?bbs_no={{da[0]}}">
+								<span class="thum">
+									
+										<img src="https://cdn.pixabay.com/photo/2014/04/13/20/49/cat-323262_960_720.jpg" alt="">
+									
+								</span>
+								<span class="title">{{ da[1] }}</span>
+								<span class="contents">{{ da[2] }}</span>
+							</a>
+						</div>
+				 {%endfor%}
+		</div>
+		</article>
+	</section>
+	<hr>
+</div>
+</s_t3>
+</body>
+</html>

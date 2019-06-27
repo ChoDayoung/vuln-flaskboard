@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>board view</title>
+<style type="text/css">
+body{ font-family:"굴림",sans-serif; font-size:13px; color:#FFFFFF;}
+	#add_write_box{ width:700px; border: 3px double #000000; position:absolute; left:45%; top:50%; background:#4a566c; margin: -140px  0  0 -292px; padding:22px 40px 8px;}
+	.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto; position:absolute; left:5%; top:50%;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:3px 0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:3px 0px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-ll75{font-weight:bold;font-size:18px;background-color:#efefef;border-color:#c0c0c0;text-align:center; color:#000000; }
+.tg .tg-tmsl{background-color:#ffffff;border-color:#c0c0c0;text-align:left;color:#000000;}
+.tg .tg-bvy0{font-weight:bold;font-size:18px;font-family:Arial, Helvetica, sans-serif !important;;background-color:#efefef;border-color:#c0c0c0;text-align:center; color:#000000;}
+.tg .form_mod{background-color:#ffffff;border-color:#c0c0c0;}
+.tg .form_mod input{ width:45px; font-size:11px; border:0;border:1px solid #FFFFFF; background:#000000; color:#FFFFFF;}
+.tg .form_del{background-color:#ffffff;border-color:#c0c0c0;}
+.tg .form_del input{ width:45px;  font-size:11px; border:0;border:1px solid #FFFFFF; background:#000000; color:#FFFFFF;}
+@media screen and (max-width: 760px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}
+	</style>
+    </head> 
+	<body>
+	<div id="add_write_box" style="height:170px">
+    	<h1>Comment Modification</h1>
+
+<table class="tg" style="undefined;table-layout: fixed; width: 700px">
+<colgroup>
+<col style="width: 65px">
+<col style="width: 380px">
+<col style="width: 30px">
+</colgroup>
+  <tr>
+    <th class="tg-bvy0">to</th>
+    <th class="tg-ll75">comment</th>
+	<th class="tg-ll75"></th>
+  </tr>
+  <tr>{% for das in data %}
+	<td class="tg-tmsl">{{ das[2] }}</td>
+   <form action="/board_main/{{das[0]}}/commod/{{das[1]}}/fin" method="POST">
+  <td class="tg-tmsl"><input type="text" name="com_mod" placeholder="{{ das[3] }}" style="width:555px;"></td>
+	<td class="form_mod"><input type="submit" name="com_mod_sub" value="mod"></td>
+  </form>
+  </tr>
+  {% endfor %}
+</table>	
+
+	  </div>
+    </body>
+  </html>
+

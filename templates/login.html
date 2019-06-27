@@ -1,0 +1,38 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>login</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+<style type="text/css">
+
+#login_box{ width:400px; height:220px; border:1px solid black; position:absolute; left:53%; top:50%;  margin: -140px  0  0 -292px; padding:22px 40px 8px;}
+.form_box{ width:400px; height:130px; border-top: 1px dotted #888; border-bottom:1px dotted #888; position:relative; left:0%; top:3%;}
+.form_box .id_form{ width:270px; height:50px; position:absolute; top:38px; left:35px;}
+.form_box .pass_form{ width:270px; height:50px; position:absolute; top:68px; left:20px;}
+.form_box .sub_form{ position:absolute; top:37px; left:280px;}
+.form_box .sub_form input{ width:80px; height:54px; border:1px; background:#333; color: #FFF;}
+.add_user_box .add_user_form{position:absolute; top:202px; left:140px;}
+.add_user_box .add_user_form input{ width:200px; height:35px; font-size:17px; border:0;border:1px solid #c0c0c0; background:#FFFFFF; color: #696969;}
+input {border: 1px solid #bcbcbc; color: #696969; border-radius: 0px; -webkit-appearance: none; width:190px; height:25px;}
+</style>
+</head>
+<body>
+<div id="login_box">
+ <h2>Sign in</h2>
+ <div class="form_box">
+	<form name="form" action="/login" method="POST">
+		<div class="id_form"><span style="font-weight:bold">아이디 <input type="text" name="userid" placeholder="ID"></span></div>
+		<div class="pass_form"><span style="font-weight:bold">패스워드 <input type="password" name="userps" placeholder="password"></span></div>
+		<div class="sub_form"><input type="submit" value="로그인" id="login"></div>
+	</form>
+</div>
+   <div class="add_user_box">
+   <form name="" action="/add_user" method="GET">
+    <div class="add_user_form"><input type="submit" value="Sign up" id="add_user"></div>
+    </form>
+   </div>
+
+</div>
+</body>
+</html>
